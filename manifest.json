@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Send to Roam Research",
+  "version": "1.0",
+  "permissions": ["contextMenus", "activeTab", "storage", "clipboardRead", "clipboardWrite", "*://x.com/*", "*://twitter.com/*"],
+  "background": {
+    "scripts": ["main.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "commands": {
+    "send-page-url": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+U",
+        "mac": "Command+Shift+U"
+      },
+      "description": "Send current page URL to Roam Research"
+    }
+  }
+}
