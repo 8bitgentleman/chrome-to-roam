@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "release": "npm version minor && npm run build && git add dist && git commit -m 'Build and dist update' && git push origin main --tags && gh release create v$(node -p -e \"require('./package.json').version\") dist/* --title 'Release v$(node -p -e \"require('./package.json').version\")' --notes 'Release notes for v$(node -p -e \"require('./package.json').version\")'"
   },
   "keywords": [],
   "author": "",
