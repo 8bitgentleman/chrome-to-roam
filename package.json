@@ -6,9 +6,9 @@
   "scripts": {
     "build": "webpack",
     "pre-release": "npm run build && zip -r chrome-to-roam.zip dist/*",
-    "release:major": "npm run pre-release && npm version major && git add chrome-to-roam.zip && git commit -m 'Build and dist update for major release' && git push origin main --tags && gh release create v$(node -p \"require('./package.json').version\") chrome-to-roam.zip --title 'Release v$(node -p \"require('./package.json').version\")' --notes 'Major release v$(node -p \"require('./package.json').version\")'",
-    "release:minor": "npm run pre-release && npm version minor && git add chrome-to-roam.zip && git commit -m 'Build and dist update for minor release' && git push origin main --tags && gh release create v$(node -p \"require('./package.json').version\") chrome-to-roam.zip --title 'Release v$(node -p \"require('./package.json').version\")' --notes 'Minor release v$(node -p \"require('./package.json').version\")'",
-    "release:patch": "npm run pre-release && npm version patch && git add chrome-to-roam.zip && git commit -m 'Build and dist update for patch release' && git push origin main --tags && gh release create v$(node -p \"require('./package.json').version\") chrome-to-roam.zip --title 'Release v$(node -p \"require('./package.json').version\")' --notes 'Patch release v$(node -p \"require('./package.json').version\")'"
+    "release:major": "npm run pre-release && npm version major && git add chrome-to-roam.zip && git commit -m 'Build and dist update for major release' && git push origin main --tags && gh release create v$(npm pkg get version | tr -d '\"') chrome-to-roam.zip --title 'Release v$(npm pkg get version | tr -d '\"')' --notes 'Major release v$(npm pkg get version | tr -d '\"')'",
+    "release:minor": "npm run pre-release && npm version minor && git add chrome-to-roam.zip && git commit -m 'Build and dist update for minor release' && git push origin main --tags && gh release create v$(npm pkg get version | tr -d '\"') chrome-to-roam.zip --title 'Release v$(npm pkg get version | tr -d '\"')' --notes 'Minor release v$(npm pkg get version | tr -d '\"')'",
+    "release:patch": "npm run pre-release && npm version patch && git add chrome-to-roam.zip && git commit -m 'Build and dist update for patch release' && git push origin main --tags && gh release create v$(npm pkg get version | tr -d '\"') chrome-to-roam.zip --title 'Release v$(npm pkg get version | tr -d '\"')' --notes 'Patch release v$(npm pkg get version | tr -d '\"')'"
   },
   "keywords": [],
   "author": "",
